@@ -1,0 +1,10 @@
+- link: ./
+  name: Home
+- link: ./filters.html
+  name: Filters
+- link: ./map-controls.html
+  name: Map Controls
+- link: ./map-annotations.html
+  name: Map Annotations
+- link: ./tables.html
+  name: Tables

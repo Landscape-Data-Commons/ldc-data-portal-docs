@@ -1,0 +1,11 @@
+<nav>
+  {% assign page_url = '.' | append: page.url %}
+  {% for item in site.data.navigation %} 
+    {% if item.link == page_url %}
+       <span class="ldc-inactive-nav-link" id='ldc-nav-links'>{{ item.name }}</span>
+    {% else %}
+      <span id='ldc-nav-links'><a href="{{ item.link }}">{{ item.name }}</a></span>
+    {% endif %}
+  {% endfor %}
+</nav>
+
