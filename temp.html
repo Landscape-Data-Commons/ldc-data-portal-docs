@@ -1,0 +1,511 @@
+<!-- 
+  2022-04-28-CMF: Polished content (minor edits); removed italics from feature references 
+  (kept for polygon-selection checkbox)
+-->
+<div id="ldc-user-guide-container">
+<div class="ldc-user-guide-introduction" id="ldc-user-guide-introduction">
+  <div class="ldc-user-guide-introduction-heading">LDC Map User Guide</div>
+  <div class="ldc-user-guide-introduction-description">
+  Click on a link in the Contents section below for a description of the corresponding map component. 
+  <i>Please log in before selecting any plots if you would like to review all avaliable tables and/or download data</i>.
+  </div>  
+</div>
+
+<div class="ldc-user-guide-contents" id="ldc-user-guide-contents">
+  <div class="ldc-user-guide-introduction-heading">Contents</div>
+  <div class="ldc-user-guide-introduction-description">
+    <div (click)="scrollToDiv('ldc-user-guide-filters-section')" class="ldc-link">Filters</div>
+    <ul>
+      <li><a (click)="scrollToDiv('ldc-user-guide-selectors-subsection')" class="ldc-link">Selectors</a></li>
+      <li><a (click)="scrollToDiv('ldc-user-guide-indicators-subsection')" class="ldc-link">Indicators</a></li>
+      <li><a (click)="scrollToDiv('ldc-user-guide-control-buttons-subsection')" class="ldc-link">Control Buttons</a></li>
+      <li><a (click)="scrollToDiv('ldc-user-guide-checkbox-subsection')" class="ldc-link">Checkbox</a></li>
+    </ul>
+
+    <!-- 2022-08-18-CMF: Removed after adding disclaimer agreement to Auth0 login
+    <div (click)="scrollToDiv('ldc-user-guide-profile-section')" class="ldc-link">Profile</div>
+    <ul>
+      <li><a (click)="scrollToDiv('ldc-user-guide-login-logout-button-subsection')" class="ldc-link">Login/Logout Button</a></li>
+
+        <li><a (click)="scrollToDiv('ldc-user-guide-data-disclaimer-subsection')" class="ldc-link">Data Disclaimer</a></li>
+
+    </ul>
+    -->
+    
+    <div (click)="scrollToDiv('ldc-user-guide-map-controls-section')" class="ldc-link">Map Controls</div>
+    <ul>
+      <li><a (click)="scrollToDiv('ldc-user-guide-zoom-in-out-control-subsection')" class="ldc-link">Zoom (+/-) Control</a></li>
+      <li><a (click)="scrollToDiv('ldc-user-guide-zoom-slider-subsection')" class="ldc-link">Zoom Slider</a></li>
+      <li><a (click)="scrollToDiv('ldc-user-guide-polygon-selector-deselector-subsection')" class="ldc-link">Polygon Selector/Deselector</a></li>
+      <li><a (click)="scrollToDiv('ldc-user-guide-map-layer-selector-subsection')" class="ldc-link">Map-Layer Selector</a></li>
+      <li><a (click)="scrollToDiv('ldc-user-guide-reset-button-subsection')" class="ldc-link">Reset Button</a></li>
+    </ul>
+
+    <div (click)="scrollToDiv('ldc-user-guide-map-annotations-section')" class="ldc-link">Map Annotations</div>
+    <ul>
+      <li><a (click)="scrollToDiv('ldc-user-guide-scale-line-subsection')" class="ldc-link">Scale Line</a></li>
+      <li><a (click)="scrollToDiv('ldc-user-guide-selected-plots-subsection')" class="ldc-link">Selected Plots</a></li>
+      <li><a (click)="scrollToDiv('ldc-user-guide-latitude-longitude-subsection')" class="ldc-link">Latitude/Longitude</a></li>
+    </ul>
+
+    <div (click)="scrollToDiv('ldc-user-guide-tables-section')" class="ldc-link">Tables</div>
+    <ul>
+      <li><a (click)="scrollToDiv('ldc-user-guide-filters-table-subsection')" class="ldc-link">Filters</a></li>
+      <li><a (click)="scrollToDiv('ldc-user-guide-indicators-table-subsection')" class="ldc-link">Indicators</a></li>
+      <li><a (click)="scrollToDiv('ldc-user-guide-species-indicator-table-subsection')" class="ldc-link">Species Indicators</a></li>
+      <li><a (click)="scrollToDiv('ldc-user-guide-line-point-intercept-table-subsection')" class="ldc-link">Line-Point Intercept</a></li>
+      <!-- All remaining links are to canopy-gap section to preserve scrolling within information panel -->
+      <li><a (click)="scrollToDiv('ldc-user-guide-canopy-gap-table-subsection')" class="ldc-link">Canopy Gap</a></li>
+      <li><a (click)="scrollToDiv('ldc-user-guide-canopy-gap-table-subsection')" class="ldc-link">Vegetation Height</a></li>
+      <li><a (click)="scrollToDiv('ldc-user-guide-canopy-gap-table-subsection')" class="ldc-link" id="ldc-species-inventory-link">Species Inventory</a></li>
+      <li><a (click)="scrollToDiv('ldc-user-guide-canopy-gap-table-subsection')" class="ldc-link">Soil Stability</a></li>
+    </ul>
+
+  </div>  
+</div>
+
+<div class="ldc-user-guide-section ldc-user-guide-filters-section" id="ldc-user-guide-filters-section">
+  <div class="ldc-user-guide-section-heading">Filters<span (click)="scrollToDiv('ldc-user-guide-introduction')" class="ldc-arrow-link page-top-arrow ldc-link">&uarr;</span></div>
+  <div class=" ldc-user-guide-section-description">
+    Click the filter icon <img src="assets/img/cmf/funnel-icon.svg" width="18" class="in-text-icon"> on the sidebar to access the data filters. 
+    The options on the Selectors and Indicators panels can be used to screen the plots on the map
+    (see below).
+  </div>
+  <div class="ldc-user-guide-subsection ldc-user-guide-selectors-subsection" id="ldc-user-guide-selectors-subsection">
+    <div class="ldc-user-guide-subsection-heading">Selectors<span (click)="scrollToDiv('ldc-user-guide-introduction')" class="ldc-arrow-link page-top-arrow ldc-link">&uarr;</span></div>
+    <div class=" ldc-user-guide-subsection-description">
+      <div>The Selectors panel is shown by default. Selectors are categorical variables 
+      such as land-cover type, Ecological Site ID, and state. Choose a selector by clicking 
+      the following elements in the given order:</div>
+      <ol>
+        <li>The Selectors tab (open by default)</li>
+        <li>A selector button in the upper part of the Selectors panel</li>
+        <li>The corresponding dropdown that appears in the lower part of the Selectors panel</li>
+        <li>A subsequently displayed dropdown option</li>
+        <li>The dropdown/autocomplete input for the desired sub-selector (for the 
+          Date selector, see below)</li>
+      </ol> 
+      Next, begin typing in the autocomplete input field. Select the desired field from the 
+      dropdown list, click the Add/Remove button to create a selection, and then click 
+      the Submit button. Available selectors are described below.
+    </div>
+    <div class="ldc-user-guide-feature">
+      <span class="ldc-user-guide-feature-heading">Land Cover<br/></span>
+      <div class=" ldc-user-guide-feature-description" >
+        Select a land-cover type using the following options:
+        <ul>
+          <li>MODIS IGBP Name</li>
+          <li>MODIS IGBP Value</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ldc-user-guide-feature">
+      <span class="ldc-user-guide-feature-heading">Ecoregion<br/></span>
+      <div class=" ldc-user-guide-feature-description" >
+        Select an ecoregion using the following options:
+        <ul>
+          <li>Ecoregion Level I</li>
+          <li>Ecoregion Level II</li>
+          <li>Ecoregion Level III</li>
+          <li>Ecoregion Level IV</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ldc-user-guide-feature">
+      <span class="ldc-user-guide-feature-heading">MLRA<br/></span>
+      <div class=" ldc-user-guide-feature-description" >
+        Select an MLRA using the following options:
+        <ul>
+          <li>MLRA Name</li>
+          <li>MLRA Symbol</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ldc-user-guide-feature">
+      <span class="ldc-user-guide-feature-heading">Ecological Site<br/></span>
+      <div class=" ldc-user-guide-feature-description" >
+        Select a type of ecological site using the following options:
+        <ul>
+          <li>Ecological Site ID</li>
+          <li>MLRA Prefix (from Ecological Site ID)</li>
+          <li>State</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ldc-user-guide-feature">
+      <span class="ldc-user-guide-feature-heading">State<br/></span>
+      <div class=" ldc-user-guide-feature-description ldc-user-guide-feature-state-description">
+        Select a state using the following option:
+        <ul>
+          <li>US State</li>
+        </ul>
+        Currently, only US states are available.
+      </div>
+    </div>
+    <div class="ldc-user-guide-feature">
+      <span class="ldc-user-guide-feature-heading">Project<br/></span>
+      <div class=" ldc-user-guide-feature-description" >
+        Select a project using the following option:
+        <ul>
+          <li>Project Name</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ldc-user-guide-feature">
+      <span class="ldc-user-guide-feature-heading">Date<br/></span>
+      <div class=" ldc-user-guide-feature-description" >
+        To select a date range, either (a) drag the range-slider handles or (b) enter dates in the input boxes;
+        use the following range-slider option:
+        <ul>
+          <li>Date Visited</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ldc-user-guide-feature">  
+      <span class="ldc-user-guide-feature-heading">Data Type<br/></span>
+      <div class=" ldc-user-guide-feature-description" >
+        Select a data type (i.e., retrieve only database records that include entries for 
+        the specified data type that are not NULL) using the following option:
+        <ul>
+          <li>Field Method</li>
+        </ul>
+      </div>
+    </div> 
+  </div>
+
+  <div class="ldc-user-guide-subsection ldc-user-guide-indicators-subsection" id="ldc-user-guide-indicators-subsection">
+    <div class="ldc-user-guide-subsection-heading">Indicators<span (click)="scrollToDiv('ldc-user-guide-introduction')" class="ldc-arrow-link page-top-arrow ldc-link">&uarr;</span></div>
+    <div class=" ldc-user-guide-subsection-description">
+      <div>As described in the second edition of the 
+           <a href="https://www.landscapetoolbox.org/wp-content/uploads/2016/02/MMGSSE_20170614.pdf" target="_blank" rel="noopener noreferrer">Monitoring Manual</a>, 
+           indicators include plot measurements such as line-point intercept 
+           (e.g., percent bare ground) and vegetation height (e.g., mean woody height) Select 
+           data ranges using the dropdown range sliders. Choose an indicator by clicking the 
+           following elements in the given order:</div>
+    <ol>
+      <li>The Indicators tab</li>
+      <li>An indicator button in the upper part of the Indicators panel</li>
+      <li>The corresponding dropdown that appears in the lower part of the Indicators panel</li>
+      <li>A subsequently displayed dropdown option</li>
+    </ol> 
+    To select an indicator range, either (a) drag the range-slider handles or (b) enter indicator
+    values in the input boxes. Note that each range slider is preset, with the lower handle/value corresponding to the 
+    mean minus three standard deviations, and the upper handle/value corresponding to the mean plus three standard 
+    deviations. Available indicators are described below.<br/>
+    </div>
+    <div class="ldc-user-guide-feature">
+      <span class="ldc-user-guide-feature-heading">Line-Point Intercept<br/></span>
+      <div class=" ldc-user-guide-feature-description" >
+        Select line-point intercept data ranges using the following indicators:
+        <ul>
+          <li>Percent Bare Ground</li>
+          <li>Percent Foliar Cover</li>
+          <li>Percent Litter Cover</li>
+          <li>Percent Rock Fragment Cover</li>
+          <li>Percent Lichen Cover</li>
+          <li>Percent Cyanobacteria Cover</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ldc-user-guide-feature">
+      <span class="ldc-user-guide-feature-heading">Vegetation Height<br/></span>
+      <div class=" ldc-user-guide-feature-description" >
+        Select vegetation-height data ranges using the following indicators:
+        <ul>
+          <li>Mean Woody Height</li>
+          <li>Mean Herbaceous Height</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ldc-user-guide-feature">
+      <span class="ldc-user-guide-feature-heading">Canopy Gap<br/></span>
+      <div class=" ldc-user-guide-feature-description" >
+        Select canopy gap data ranges using the following indicators:
+        <ul>
+          <li>Canopy Gaps 25-50 cm (%)</li>
+          <li>Canopy Gaps 51-100 cm (%)</li>
+          <li>Canopy Gaps 101-200 cm (%)</li>
+          <li>Canopy Gaps > 200 cm (%)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ldc-user-guide-feature">
+      <span class="ldc-user-guide-feature-heading">Soil Stability<br/></span>
+      <div class=" ldc-user-guide-feature-description" >
+        Select soil-stability data ranges using the following indicators:
+        <ul>
+          <li>Mean Soil Stability</li>
+          <li>Mean Soil Stability: Protected Samples</li>
+          <li>Mean Soil Stability: Unprotected Samples</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="ldc-user-guide-subsection ldc-user-guide-selectors-subsection" id="ldc-user-guide-control-buttons-subsection">
+    <div class="ldc-user-guide-subsection-heading">Control Buttons<span (click)="scrollToDiv('ldc-user-guide-introduction')" class="ldc-arrow-link page-top-arrow ldc-link">&uarr;</span></div>
+    <div class="ldc-user-guide-feature">
+      <span class="ldc-user-guide-feature-heading">Submit Button<br/></span>
+      <div class=" ldc-user-guide-feature-description" >
+        Click the Submit button to
+        <ol>
+          <li>Select all plots on the map that satisfy the chosen filter conditions</li>
+          <li>Retrieve and populate the tables (that appear below the map) with data
+              that satisfy the chosen filter conditions
+          </li>
+        </ol>
+      </div>
+    </div>
+    <div class="ldc-user-guide-feature">
+      <span class="ldc-user-guide-feature-heading">Clear Button<br/></span>
+      <div class=" ldc-user-guide-feature-description" >
+        Click the Clear button to
+        <ol>
+          <li>Deselect all selected plots on the map</li>
+          <li>Remove the dynamically generated tables below the map</li>
+          <li>Return the map layer to the default (Google Terrain)</li>
+          <li>Uncheck the <i>Select features from polygon</i> checkbox in the Filters panel</li>
+          <li>Remove all chosen selectors and indicators from the Filters panel</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  
+  <div class="ldc-user-guide-subsection ldc-user-guide-selectors-subsection" id="ldc-user-guide-checkbox-subsection">
+    <div class="ldc-user-guide-subsection-heading">Checkbox<span (click)="scrollToDiv('ldc-user-guide-introduction')" class="ldc-arrow-link page-top-arrow ldc-link">&uarr;</span></div>
+    <div class=" ldc-user-guide-subsection-description">
+      <div>
+        Clicking the Submit button with the <i>Select features from polygon</i> 
+        checkbox checked will (a) show the intersection of filtered plots and polygon-selected plots 
+        on the map and (b) show the data for the intersection in the tables that appear below the map. 
+        If no polygon selections exist but filters have been chosen, only the filtered plots 
+        (and data) are returned. If no filters have been selected but polygon selections exist, the
+        polygon-selected plots and data are returned. Note that choosing additional filters
+        and adding polygons with the <i>Select features from polygon</i> checkbox checked will
+        continue to return the intersection of the filtered plots and polygon-selected plots. Clicking either the 
+        Clear button in the Filters panel or the Reset button on the map will
+        uncheck the <i>Select features from polygon</i> checkbox.
+      </div>
+    </div>
+  </div>
+</div>
+      <!-- 2022-08-18-CMF: Removed after adding disclaimer agreement to Auth0 login
+<div class="ldc-user-guide-section ldc-user-guide-profile-section">
+  <div class="ldc-user-guide-section-heading " id="ldc-user-guide-profile-section">Profile<span (click)="scrollToDiv('ldc-user-guide-introduction')" class="ldc-arrow-link page-top-arrow ldc-link">&uarr;</span></div>
+  <div class=" ldc-user-guide-section-description">
+    Open the profile panel using the sidebar avatar icon <img src="assets/img/cmf/user-icon.svg" width="15" class="in-text-icon">. When a user is logged out, the profile panel shows a login
+    button. When a user is logged in, the profile panel shows (a) the user's email address and (b) a data disclaimer with an agreement checkbox.
+  </div>
+  <div class="ldc-user-guide-subsection ldc-user-guide-selectors-subsection">
+    <div class="ldc-user-guide-subsection" id="ldc-user-guide-login-logout-button-subsection">
+      <span class="ldc-user-guide-subsection-heading">Login/Logout Button<span (click)="scrollToDiv('ldc-user-guide-introduction')" class="ldc-arrow-link page-top-arrow ldc-link">&uarr;</span><br/></span>
+      <div class=" ldc-user-guide-subsection-description" >
+        Clicking the Login button will generate a popup window for logging in 
+        via either a <a href="https://accounts.google.com/" alt="Gmail sign-in page">Gmail</a> 
+        account or an <a href="https://auth0.com/signup" alt="Auth0 sign-in page">Auth0</a> account. 
+        The Logout button appears once the user has logged in. Note that while a user can view data 
+        in the Filters and Indicators tables without being logged in, <b> a user must be logged in and must have agreed to the data 
+        disclaimer in order to view data in the other tables</b>.
+      </div>
+    </div>
+    <div class="ldc-user-guide-subsection" id="ldc-user-guide-data-disclaimer-subsection">
+      <span class="ldc-user-guide-subsection-heading">Data Disclaimer<span (click)="scrollToDiv('ldc-user-guide-introduction')" class="ldc-arrow-link page-top-arrow ldc-link">&uarr;</span><br/></span>
+      <div class=" ldc-user-guide-subsection-description" >
+        When a user logs in, a data disclaimer appears in the lower part of the profile panel along with an agreement 
+        checkbox beneath the disclaimer. <b>A user must
+        be logged in and must have agreed to the data disclaimer to view data in tables other 
+        than the Filters and Indicators tables</b>.
+      </div>
+    </div>
+  </div>
+</div>
+-->
+
+<div class="ldc-user-guide-section ldc-user-guide-map-control-section" id="ldc-user-guide-map-controls-section">
+  <div class="ldc-user-guide-section-heading">Map Controls<span (click)="scrollToDiv('ldc-user-guide-introduction')" class="ldc-arrow-link page-top-arrow ldc-link">&uarr;</span></div>
+  <div class=" ldc-user-guide-section-description ldc-user-guide-map-control-section-description">
+    There are 5 controls on the right-hand side of the map: 
+    <ol>
+      <li>A zoom (+/-) control</li>
+      <li>A zoom slider</li>
+      <li>A polygon selector/deselector</li>
+      <li>A map-layer selector</li>
+      <li>A reset button</li>
+    </ol>
+  </div>
+  <div class="ldc-user-guide-subsection ldc-user-guide-selectors-subsection">
+    <div class="ldc-user-guide-subsection" id="ldc-user-guide-zoom-in-out-control-subsection">
+      <span class="ldc-user-guide-subsection-heading">Zoom (+/-) Control<span (click)="scrollToDiv('ldc-user-guide-introduction')" class="ldc-arrow-link page-top-arrow ldc-link">&uarr;</span><br/></span>
+      <div class=" ldc-user-guide-subsection-description" >
+        The zoom buttons allow users to incrementally zoom in and out by clicking the 
+        plus (+) button and the minus (-) button, respectively.
+      </div>
+    </div>
+    <div class="ldc-user-guide-subsection" id="ldc-user-guide-zoom-slider-subsection">
+      <span class="ldc-user-guide-subsection-heading">Zoom Slider<span (click)="scrollToDiv('ldc-user-guide-introduction')" class="ldc-arrow-link page-top-arrow ldc-link">&uarr;</span><br/></span>
+      <div class=" ldc-user-guide-subsection-description" >
+        Use the zoom slider to quickly zoom in and out.
+      </div>
+    </div>
+    <div class="ldc-user-guide-subsection" id="ldc-user-guide-polygon-selector-deselector-subsection">
+      <span class="ldc-user-guide-subsection-heading">Polygon Selector/Deselector<span (click)="scrollToDiv('ldc-user-guide-introduction')" class="ldc-arrow-link page-top-arrow ldc-link">&uarr;</span><br/></span>
+      <div class=" ldc-user-guide-subsection-description" >
+        Clicking the polygon button (the button with the polygon icon <img src="assets/img/cmf/polygon-icon.svg" width="20" class="in-text-icon">) produces a submenu with Select and Deselect options. 
+        Drawing a polygon with the Select option adds plots to the total set of selected plots 
+        (polygon selections are additive). Drawing a polygon with the Deselect option removes plots
+        from the selection set.
+      </div>
+    </div>
+    <div class="ldc-user-guide-subsection" id="ldc-user-guide-map-layer-selector-subsection">
+      <span class="ldc-user-guide-subsection-heading">Map-Layer Selector<span (click)="scrollToDiv('ldc-user-guide-introduction')" class="ldc-arrow-link page-top-arrow ldc-link">&uarr;</span><br/></span>
+      <div class=" ldc-user-guide-subsection-description" >
+        Clicking the map-layer button (the button with the map-layers icon <img src="assets/img/cmf/map-layers-icon.svg" width="20" class="in-text-icon">) produces a menu with 4 Google 
+        map-layer options: 
+        <ol>
+          <li>Terrain (the default)</li>
+          <li>Satellite</li>
+          <li>Road</li>
+          <li>Hybrid</li>
+        </ol>
+        Clicking the Clear button on the Filters sidebar panel or the
+        Reset button on the map will reset the map layer to Google Terrain.
+      </div>
+    </div>
+    <div class="ldc-user-guide-subsection" id="ldc-user-guide-reset-button-subsection">
+      <span class="ldc-user-guide-subsection-heading">Reset Button<span (click)="scrollToDiv('ldc-user-guide-introduction')" class="ldc-arrow-link page-top-arrow ldc-link">&uarr;</span><br/></span>
+      <div class=" ldc-user-guide-subsection-description" >
+        Click the Reset button <img src="assets/img/cmf/reset-icon.svg" width="18" class="in-text-icon in-text-reset-icon "> to do the following:
+        <ol>
+          <li>Deselect all selected plots on the map</li>
+          <li>Remove the dynamically generated tables below the map</li>
+          <li>Return the map layer to the default (Google Terrain)</li>
+          <li>Uncheck the <i>Select features from polygon</i> checkbox on the Filters panel</li>
+        </ol>
+        Note that the Reset button acts like the Clear button on 
+        the Filters panel &#8212; with one important difference: the Reset button does <b>not</b> deselect
+        chosen selectors and indicators.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ldc-user-guide-section ldc-user-guide-map-annotations-section" id="ldc-user-guide-map-annotations-section">
+  <div class="ldc-user-guide-section-heading">Map Annotations<span (click)="scrollToDiv('ldc-user-guide-introduction')" class="ldc-arrow-link page-top-arrow ldc-link">&uarr;</span></div>
+  <div class=" ldc-user-guide-section-description ldc-user-guide-map-annotations-section-description">
+    There are three map annotations:
+    <ol>
+      <li>A scale line</li>
+      <li>A Selected Plots annotation</li>
+      <li>A Latitude/Longitude annotation</li>
+    </ol>
+  </div>
+  <div class="ldc-user-guide-subsection ldc-user-guide-selectors-subsection">
+    <div class="ldc-user-guide-subsection" id="ldc-user-guide-scale-line-subsection">
+      <span class="ldc-user-guide-subsection-heading">Scale Line<span (click)="scrollToDiv('ldc-user-guide-introduction')" class="ldc-arrow-link page-top-arrow ldc-link">&uarr;</span><br/></span>
+      <div class=" ldc-user-guide-subsection-description" >
+        The scale line, located in the lower right-hand corner of the map, provides 
+        a metric distance scale that changes according to zoom level.
+      </div>
+    </div>
+    <div class="ldc-user-guide-subsection" id="ldc-user-guide-selected-plots-subsection">
+      <span class="ldc-user-guide-subsection-heading">Selected Plots<span (click)="scrollToDiv('ldc-user-guide-introduction')" class="ldc-arrow-link page-top-arrow ldc-link">&uarr;</span><br/></span>
+      <div class=" ldc-user-guide-subsection-description" >
+        The Selected Plots subsection (below the map on the left) shows the number of 
+        plots that have been selected using the polygon map control or the selectors
+        and indicators in the Filters panel.
+      </div>
+    </div>
+    <div class="ldc-user-guide-subsection" id="ldc-user-guide-latitude-longitude-subsection">
+      <span class="ldc-user-guide-subsection-heading">Latitude/Longitude<span (click)="scrollToDiv('ldc-user-guide-introduction')" class="ldc-arrow-link page-top-arrow ldc-link">&uarr;</span><br/></span>
+      <div class=" ldc-user-guide-subsection-description" >
+        The Latitude/Longitude subsection below the map on the right-hand side shows the
+        latitude and longitude values that correspond to the current position of the mouse pointer
+        when hovering over the map.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ldc-user-guide-section ldc-user-guide-tables-section" id="ldc-user-guide-tables-section">
+  <div class="ldc-user-guide-section-heading">Tables<span (click)="scrollToDiv('ldc-user-guide-introduction')" class="ldc-arrow-link page-top-arrow ldc-link">&uarr;</span></div>
+  <div class=" ldc-user-guide-section-description">
+    The tables that appear below the map when plots are selected are as follows:
+    <ol>
+      <li>Filters</li>
+      <li>Indicators</li>
+      <li>Species Indicators</li>
+      <li>Line-Point Intercept</li>
+      <li>Canopy Gap</li>
+      <li>Height</li>
+      <li>Species Inventory</li>
+      <li>Soil Stability</li>
+    </ol>
+    The Filters and Indicators tables are always shown, but the other
+    6 tables are only populated with data if the user has logged in (and so has agreed to
+    the LDC data disclaimer). It's also important to note that while all selected sites are shown on the map, the 
+    corresponding data rows in the tables are limited to (a) 10 rows each for the Filters and Indicators 
+    tables and (b) 200 rows for each of the other 6 tables. Pressing the Next button that
+    appears at the bottom of each table will advance to the next set of data rows for a given table. Use the 
+    horizontal scroll bar at the bottom of the tables and the vertical scroll bar on
+    the right-hand side of the tables to view rows and columns.
+  </div>
+  <div class="ldc-user-guide-subsection ldc-user-guide-selectors-subsection">
+    <div class="ldc-user-guide-subsection" id="ldc-user-guide-filters-table-subsection">
+      <span class="ldc-user-guide-subsection-heading">Filters<span (click)="scrollToDiv('ldc-user-guide-introduction')" class="ldc-arrow-link page-top-arrow ldc-link">&uarr;</span><br/></span>
+      <div class=" ldc-user-guide-subsection-description" >
+        This table shows the data, 10 rows at a time, corresponding to the selectors and 
+        indicators chosen in the Filters panel.
+      </div>
+    </div>
+    <div class="ldc-user-guide-subsection" id="ldc-user-guide-indicators-table-subsection">
+      <span class="ldc-user-guide-subsection-heading">Indicators<span (click)="scrollToDiv('ldc-user-guide-introduction')" class="ldc-arrow-link page-top-arrow ldc-link">&uarr;</span><br/></span>
+      <div class=" ldc-user-guide-subsection-description" >
+        This table shows additional indicator data, 10 rows at a time, corresponding to the selectors and 
+        indicators chosen in the Filters panel.
+      </div>
+    </div>
+    <div class="ldc-user-guide-subsection" id="ldc-user-guide-species-indicator-table-subsection">
+      <span class="ldc-user-guide-subsection-heading">Species Indicators<span (click)="scrollToDiv('ldc-user-guide-introduction')" class="ldc-arrow-link page-top-arrow ldc-link">&uarr;</span><br/></span>
+      <div class=" ldc-user-guide-subsection-description" >
+        The Species Indicators table shows all species-indicators data, 200 rows at a time, that correspond to the
+        plot Primary Key values in the Filters table.
+      </div>
+    </div>
+    <div class="ldc-user-guide-subsection" id="ldc-user-guide-line-point-intercept-table-subsection">
+      <span class="ldc-user-guide-subsection-heading">Line-Point Intercept<span (click)="scrollToDiv('ldc-user-guide-introduction')" class="ldc-arrow-link page-top-arrow ldc-link">&uarr;</span><br/></span>
+      <div class=" ldc-user-guide-subsection-description" >
+        The Line-Point Intercept table shows the raw line-point intercept data, 200 rows at a time, that correspond to the
+        plot Primary Key values in the Filters table.
+      </div>
+    </div>
+    <div class="ldc-user-guide-subsection" id="ldc-user-guide-canopy-gap-table-subsection">
+      <span class="ldc-user-guide-subsection-heading">Canopy Gap<span (click)="scrollToDiv('ldc-user-guide-introduction')" class="ldc-arrow-link page-top-arrow ldc-link">&uarr;</span><br/></span>
+      <div class=" ldc-user-guide-subsection-description" >
+        The Canopy Gap table shows the raw canopy gap data, 200 rows at a time, that correspond to the
+        plot Primary Key values in the Filters table.
+      </div>
+    </div>
+    <div class="ldc-user-guide-subsection" id="ldc-user-guide-vegetation-height-table-subsection">
+      <span class="ldc-user-guide-subsection-heading">Vegetation Height<span (click)="scrollToDiv('ldc-user-guide-introduction')" class="ldc-arrow-link page-top-arrow ldc-link">&uarr;</span><br/></span>
+      <div class=" ldc-user-guide-subsection-description" >
+        The Vegetation Height table shows the raw vegetation height data, 200 rows at a time, that correspond to the
+        plot Primary Key values in the Filters table.
+      </div>
+    </div>
+    <div class="ldc-user-guide-subsection" id="ldc-user-guide-species-inventory-table-subsection">
+      <span class="ldc-user-guide-subsection-heading">Species Inventory<span (click)="scrollToDiv('ldc-user-guide-introduction')" class="ldc-arrow-link page-top-arrow ldc-link">&uarr;</span><br/></span>
+      <div class=" ldc-user-guide-subsection-description" >
+        The Species Inventory table shows the raw species inventory data, 200 rows at a time, that correspond to the
+        plot Primary Key values in the Filters table.
+      </div>
+    </div>
+    <div class="ldc-user-guide-subsection" id="ldc-user-guide-soil-stability-table-subsection">
+      <span class="ldc-user-guide-subsection-heading">Soil Stability<span (click)="scrollToDiv('ldc-user-guide-introduction')" class="ldc-arrow-link page-top-arrow ldc-link">&uarr;</span><br/></span>
+      <div class=" ldc-user-guide-subsection-description" >
+        The Soil Stability table shows the raw soil stability data, 200 rows at a time, that correspond to the
+        plot Primary Key values in the Filters table.
+      </div>
+    </div>
+  </div>
+</div>
+</div>
