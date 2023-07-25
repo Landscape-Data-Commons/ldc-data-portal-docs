@@ -2,7 +2,7 @@
 
 {% include navigation.html %}
 
-# Map annotations
+# Map Annotations
 - [Finding](#finding)
 - [Scale Line](#scale-line)
 - [Selected Plots](#selected-plots)

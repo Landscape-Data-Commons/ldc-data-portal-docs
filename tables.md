@@ -2,7 +2,7 @@
 
 {% include navigation.html %}
 
-# Map tables
+# Map Tables
 - [Finding](#finding)
 - [Filters](#filters)
 - [Indicators](#indicators)

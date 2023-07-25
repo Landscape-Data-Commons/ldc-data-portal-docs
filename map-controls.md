@@ -2,7 +2,7 @@
 
 {% include navigation.html %}
 
-# Map controls
+# Map Controls
 - [Finding](#finding)
 - [Zoom (+/-) Control](#zoom---control)
 - [Zoom Slider](#zoom-slider)

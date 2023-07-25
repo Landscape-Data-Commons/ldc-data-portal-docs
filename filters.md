@@ -2,7 +2,7 @@
 
 {% include navigation.html %}
 
-# Map filters
+# Map Filters
 
 ## Contents
 - [Finding](#finding)
