@@ -1,11 +1,15 @@
 <nav>
+  <ol style="list-style-type: none; padding-left: 0;">
   {% assign page_url = '.' | append: page.url %}
   {% for item in site.data.navigation %} 
+  <li style="display: inline-block; margin-top: 12px !important;">
     {% if item.link == page_url %}
-       <span class="ldc-inactive-nav-link" id='ldc-nav-links'>{{ item.name }}</span>
+       <span class="ldc-inactive-nav-link ldc-nav-links">{{ item.name }}</span>
     {% else %}
-      <span id='ldc-nav-links'><a href="{{ item.link }}">{{ item.name }}</a></span>
+      <span class="ldc-nav-links" style="margin-top: 20px !important; color: red"><a href="{{ item.link }}">{{ item.name }}</a></span>
     {% endif %}
+  </li>
   {% endfor %}
+</ol>
 </nav>
 

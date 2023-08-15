@@ -28,11 +28,12 @@
 /* 2023-07-09-CMF: Add LDC styles (some in-line modifications to theme styles appear after this section) */
 /* BEGIN LDC STYLES */
 
-#ldc-nav-links {
+.ldc-nav-links {
   border: 1px solid $section-headings-color;
   border-radius: 4px;
-  padding: 4px 12px 4px 12px;
+  padding: 4px 12px 4px 12px !important;
   margin: 2px;
+  margin-top: 20px !important;
   text-align: center;
 }
 
@@ -124,8 +125,10 @@ a {
 }
 
 .page-header {
-  color: #BF5008; /* 2023-07-10-CMF: Burnt orange given in the Jornada New Websites Style Guide */
+  color: white; /* 2023-08-10-CMF: Changed to white from burnt orange (#BF5008) given in the Jornada New Websites Style Guide */
   text-align: center;
+  text-shadow: 1px 1px 2px black; /* 2023-08-10-CMF: Add shadow to prevent wash-out effect */
+  /* 2023-08-10-CMF-NOT-IMPLEMENTED: -webkit-text-stroke: .5px black;*/
   /* 2023-07-06-CMF: Replace color banner with Jornada range image
   background-color: $header-bg-color;
   background-image: linear-gradient(120deg, $header-bg-color-secondary, $header-bg-color);
@@ -190,7 +193,9 @@ a {
   }
 
   @include large {
-    max-width: 64rem;
+    /* 2023-08-10-CMF: Widen page content*/
+    max-width: 90%; 
+    /* max-width: 64rem; */
     padding: 2rem 6rem;
     margin: 0 auto;
     font-size: 1.1rem;
